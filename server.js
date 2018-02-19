@@ -43,6 +43,8 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/newsScraper";
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 
+const db = mongoose.connection;
+
 // Routes
 
 // A GET route for scraping the echojs website
