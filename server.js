@@ -36,12 +36,12 @@ app.get("/", function(req, res) {
   res.render("index");
 });
 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/newsScraper";
+
 // By default mongoose uses callbacks for async queries, we're setting it to use promises (.then syntax) instead
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/", {
-  useMongoClient: true
-});
+mongoose.connect("mongodb://localhost/");
 
 // Routes
 
